@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3A7B57492521E503007493E3"
                BuildableName = "ShakeList.app"
-               BlueprintName = "ShakeLIst"
-               ReferencedContainer = "container:ShakeLIst.xcodeproj">
+               BlueprintName = "ShakeList"
+               ReferencedContainer = "container:ShakeList.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,8 +46,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3A7B57492521E503007493E3"
             BuildableName = "ShakeList.app"
-            BlueprintName = "ShakeLIst"
-            ReferencedContainer = "container:ShakeLIst.xcodeproj">
+            BlueprintName = "ShakeList"
+            ReferencedContainer = "container:ShakeList.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3A7B57492521E503007493E3"
             BuildableName = "ShakeList.app"
-            BlueprintName = "ShakeLIst"
-            ReferencedContainer = "container:ShakeLIst.xcodeproj">
+            BlueprintName = "ShakeList"
+            ReferencedContainer = "container:ShakeList.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

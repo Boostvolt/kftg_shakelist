@@ -119,9 +119,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3A7B57492521E503007493E3 /* ShakeLIst */ = {
+		3A7B57492521E503007493E3 /* ShakeList */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3A7B575E2521E504007493E3 /* Build configuration list for PBXNativeTarget "ShakeLIst" */;
+			buildConfigurationList = 3A7B575E2521E504007493E3 /* Build configuration list for PBXNativeTarget "ShakeList" */;
 			buildPhases = (
 				3A7B57462521E503007493E3 /* Sources */,
 				3A7B57472521E503007493E3 /* Frameworks */,
@@ -131,7 +131,7 @@
 			);
 			dependencies = (
 			);
-			name = ShakeLIst;
+			name = ShakeList;
 			productName = Erinnerungen;
 			productReference = 3A7B574A2521E503007493E3 /* ShakeList.app */;
 			productType = "com.apple.product-type.application";
@@ -151,7 +151,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3A7B57452521E503007493E3 /* Build configuration list for PBXProject "ShakeLIst" */;
+			buildConfigurationList = 3A7B57452521E503007493E3 /* Build configuration list for PBXProject "ShakeList" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -164,7 +164,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3A7B57492521E503007493E3 /* ShakeLIst */,
+				3A7B57492521E503007493E3 /* ShakeList */,
 			);
 		};
 /* End PBXProject section */
@@ -367,7 +367,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3A7B57452521E503007493E3 /* Build configuration list for PBXProject "ShakeLIst" */ = {
+		3A7B57452521E503007493E3 /* Build configuration list for PBXProject "ShakeList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A7B575C2521E504007493E3 /* Debug */,
@@ -376,7 +376,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3A7B575E2521E504007493E3 /* Build configuration list for PBXNativeTarget "ShakeLIst" */ = {
+		3A7B575E2521E504007493E3 /* Build configuration list for PBXNativeTarget "ShakeList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A7B575F2521E504007493E3 /* Debug */,
