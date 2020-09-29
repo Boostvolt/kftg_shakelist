@@ -46,6 +46,16 @@ class TaskRepository: ObservableObject {
         catch {
             fatalError("Task Enkodierung fehlgeschlagen: \(error.localizedDescription)")
         }
-        
+    }
+    
+    func updateTask(_ task: Task){
+        if let taskID = task.id {
+            do {
+                try db.collection("tasks").document(taskID).setData(from: task)
+            }
+            catch {
+                fatalError("Task Enkodierung fehlgeschlagen: \(error.localizedDescription)")
+            }
+        }
     }
 }
