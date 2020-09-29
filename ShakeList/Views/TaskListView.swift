@@ -11,6 +11,11 @@ import SwiftUI
 struct TaskListView: View {
     @ObservedObject var taskListVM = TaskListViewModel()
     
+    init() {
+        let navBarAppearance = UINavigationBar.appearance()
+        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.systemBlue]
+    }
+    
     let tasks = testDataTasks
     
     @State var presentAddNewItem = false
@@ -41,7 +46,7 @@ struct TaskListView: View {
                 }
             .padding()
             }
-        .navigationBarTitle("Einkaufsliste")
+        .navigationBarTitle("ShakeList")
         }
     }
 }
@@ -61,6 +66,7 @@ struct TaskCell: View {
         HStack{
             Image(systemName: taskCellVM.task.completed ? "checkmark.circle.fill" : "circle")
                 .resizable()
+                .foregroundColor(Color(.systemBlue))
                 .frame(width: 20, height: 20)
                 .onTapGesture {
                     self.taskCellVM.task.completed.toggle()
