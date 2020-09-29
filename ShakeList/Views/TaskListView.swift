@@ -36,7 +36,7 @@ struct TaskListView: View {
                     Image(systemName: "plus.circle.fill")
                         .resizable()
                         .frame(width: 20, height: 20)
-                    Text("Neuer Artikel hinzufügen")
+                    Text("Neuer Artikel")
                     }
                 }
             .padding()

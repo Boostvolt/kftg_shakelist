@@ -329,10 +329,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Erinnerungen/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"ShakeList/Preview Content\"";
 				DEVELOPMENT_TEAM = P862N2N6K5;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Erinnerungen/Info.plist;
+				INFOPLIST_FILE = ShakeList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -349,10 +349,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Erinnerungen/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"ShakeList/Preview Content\"";
 				DEVELOPMENT_TEAM = P862N2N6K5;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Erinnerungen/Info.plist;
+				INFOPLIST_FILE = ShakeList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
