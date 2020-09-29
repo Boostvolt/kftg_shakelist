@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  Erinnerungen
+//  ShakeList
 //
 //  Created by Jan Kott on 28.09.20.
 //  Copyright © 2020 Jan Kott. All rights reserved.
@@ -8,15 +8,15 @@
 
 import SwiftUI
 
-struct TaskListView: View {
-    @ObservedObject var taskListVM = TaskListViewModel()
+struct ItemListView: View {
+    @ObservedObject var itemListVM = ItemListViewModel()
     
     init() {
         let navBarAppearance = UINavigationBar.appearance()
         navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.systemBlue]
     }
     
-    let tasks = testDataTasks
+    let items = testDataItems
     
     @State var presentAddNewItem = false
     
@@ -24,14 +24,17 @@ struct TaskListView: View {
       NavigationView {
         VStack(alignment: .leading) {
             List {
-                ForEach(taskListVM.taskCellViewModels) { taskCellVM in
-                    TaskCell(taskCellVM: taskCellVM)
+                ForEach(itemListVM.itemCellViewModels) { itemCellVM in
+                    ItemCell(itemCellVM: itemCellVM)
                     
-                 }
+                }
+                .onDelete { indexSet in
+                  self.itemListVM.removeItems(atOffsets: indexSet)
+                }
                 if presentAddNewItem {
-                    TaskCell(taskCellVM: TaskCellViewModel(task: Task(title: "", completed: false))) {
-                        task in
-                        self.taskListVM.addTask(task: task)
+                    ItemCell(itemCellVM: ItemCellViewModel(item: Item(title: "", completed: false))) {
+                        item in
+                        self.itemListVM.addItem(item: item)
                         self.presentAddNewItem.toggle()
                     }
                 }
@@ -53,26 +56,26 @@ struct TaskListView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        TaskListView()
+        ItemListView()
     }
 }
 
-struct TaskCell: View {
-    @ObservedObject var taskCellVM: TaskCellViewModel
+struct ItemCell: View {
+    @ObservedObject var itemCellVM: ItemCellViewModel
     
-    var onCommit: (Task) -> (Void) = { _ in }
+    var onCommit: (Item) -> (Void) = { _ in }
 
     var body: some View {
         HStack{
-            Image(systemName: taskCellVM.task.completed ? "checkmark.circle.fill" : "circle")
+            Image(systemName: itemCellVM.item.completed ? "checkmark.circle.fill" : "circle")
                 .resizable()
                 .foregroundColor(Color(.systemBlue))
                 .frame(width: 20, height: 20)
                 .onTapGesture {
-                    self.taskCellVM.task.completed.toggle()
+                    self.itemCellVM.item.completed.toggle()
             }
-            TextField("Neuer Artikelname eingeben", text: $taskCellVM.task.title, onCommit: {
-                self.onCommit(self.taskCellVM.task)
+            TextField("Neuer Artikelname eingeben", text: $itemCellVM.item.title, onCommit: {
+                self.onCommit(self.itemCellVM.item)
             })
         }
     }

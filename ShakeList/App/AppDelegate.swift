@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Erinnerungen
+//  ShakeList
 //
 //  Created by Jan Kott on 28.09.20.
 //  Copyright © 2020 Jan Kott. All rights reserved.

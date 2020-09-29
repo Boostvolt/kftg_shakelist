@@ -1,6 +1,6 @@
 //
-//  Task.swift
-//  Erinnerungen
+//  Item.swift
+//  ShakeList
 //
 //  Created by Jan Kott on 28.09.20.
 //  Copyright © 2020 Jan Kott. All rights reserved.
@@ -10,7 +10,7 @@ import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-struct Task: Codable, Identifiable{
+struct Item: Codable, Identifiable{
     @DocumentID var id: String?
     var title: String
     var completed: Bool
@@ -19,10 +19,10 @@ struct Task: Codable, Identifiable{
 }
 
 #if DEBUG
-let testDataTasks = [
-    Task(title: "Apfel", completed: true),
-    Task(title: "Karotte", completed: false),
-    Task(title: "Salat", completed: false),
-    Task(title: "Brine", completed: false)
+let testDataItems = [
+    Item(title: "Apfel", completed: true),
+    Item(title: "Karotte", completed: false),
+    Item(title: "Salat", completed: false),
+    Item(title: "Brine", completed: false)
 ]
 #endif

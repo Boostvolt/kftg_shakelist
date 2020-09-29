@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  Erinnerungen
+//  ShakeList
 //
 //  Created by Jan Kott on 28.09.20.
 //  Copyright © 2020 Jan Kott. All rights reserved.
@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Create the SwiftUI view that provides the window contents.
-        let contentView = TaskListView()
+        let contentView = ItemListView()
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

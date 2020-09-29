@@ -1,6 +1,6 @@
 //
-//  TaskCellViewModel.swift
-//  Erinnerungen
+//  ItemCellViewModel.swift
+//  ShakeList
 //
 //  Created by Jan Kott on 28.09.20.
 //  Copyright © 2020 Jan Kott. All rights reserved.
@@ -9,38 +9,34 @@
 import Foundation
 import Combine
 
-class TaskCellViewModel: ObservableObject, Identifiable {
-    @Published var taskRepository = TaskRepository()
+class ItemCellViewModel: ObservableObject, Identifiable {
+    @Published var itemRepository = ItemRepository()
     
-    @Published var task: Task
+    @Published var item: Item
     
     var id = ""
     @Published var completionStateIconName = ""
     
     private var cancellables = Set<AnyCancellable>()
     
-    init(task: Task) {
-        self.task = task
+    init(item: Item) {
+        self.item = item
         
-        $task
-            .map { task in
-                task.completed ? "checkmark.circle.fill" : "circle"
-            }
+        $item
+        .map { $0.completed ? "checkmark.circle.fill" : "circle" }
         .assign(to: \.completionStateIconName, on: self)
         .store(in: &cancellables)
         
-        $task
-            .compactMap { task in
-                    task.id
-            }
+        $item
+        .compactMap { $0.id }
         .assign(to: \.id, on: self)
         .store(in: &cancellables)
         
-        $task
+        $item
             .dropFirst()
             .debounce(for: 1.0, scheduler: RunLoop.main)
-            .sink{ task in
-                self.taskRepository.updateTask(task)
+            .sink{ item in
+                self.itemRepository.updateItem(item)
             }
         .store(in: &cancellables)
     }
