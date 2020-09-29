@@ -14,7 +14,7 @@ struct Task: Codable, Identifiable{
     @DocumentID var id: String?
     var title: String
     var completed: Bool
-    var createdTime: Timestamp?
+    @ServerTimestamp var createTime: Timestamp?
 }
 
 #if DEBUG
