@@ -71,8 +71,18 @@ extension SignInWithAppleCoordinater: ASAuthorizationControllerDelegate {
                                                 rawNonce: nonce)
         
         Auth.auth().currentUser?.link(with: credential, completion: { (authresult, error) in
-            if error != nil {
-                print("Anmeldung fehlgeschlagen: \(error?.localizedDescription)")
+            if let error = error, (error as NSError).code == AuthErrorCode.credentialAlreadyInUse.rawValue {
+                print("Der Benutzer, den du versuchst anzumelden, wurde bereits verknüpft.")
+                if let updatedCredential = (error as NSError).userInfo[AuthErrorUserInfoUpdatedCredentialKey] as? OAuthCredential {
+                    print("Angemeldet mit aktualisierten Referenzen.")
+                    Auth.auth().signIn(with: updatedCredential) { (authResult, error ) in
+                        if let user = authResult?.user {
+                            if let callback = self.onSignedIn {
+                            callback()
+                            }
+                        }
+                    }
+                }
             }
             else {
                 if let callback = self.onSignedIn {
@@ -80,7 +90,7 @@ extension SignInWithAppleCoordinater: ASAuthorizationControllerDelegate {
                 }
             }
         })
-    }
+        }
   }
 
   func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {

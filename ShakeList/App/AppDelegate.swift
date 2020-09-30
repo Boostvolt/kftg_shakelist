@@ -18,7 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         FirebaseApp.configure()
-        Auth.auth().signInAnonymously()
+        if Auth.auth().currentUser == nil {
+            Auth.auth().signInAnonymously()
+        }
         return true
     }
 
