@@ -18,6 +18,8 @@
 		3A7B57632521E52A007493E3 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B57622521E52A007493E3 /* Item.swift */; };
 		3AB4A6B725220A4E0043AD2D /* ItemCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB4A6B625220A4E0043AD2D /* ItemCellViewModel.swift */; };
 		3AB4A6B925220E280043AD2D /* ItemListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB4A6B825220E280043AD2D /* ItemListViewModel.swift */; };
+		3ABAEF9025246C0500FC124C /* SignInWithAppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABAEF8F25246C0500FC124C /* SignInWithAppleButton.swift */; };
+		3ABAEF9225246E0C00FC124C /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABAEF9125246E0C00FC124C /* SignInView.swift */; };
 		F3E2546A4703106BCA488994 /* Pods_ShakeList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F77EE191DF26B35865954565 /* Pods_ShakeList.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +37,8 @@
 		3A7B57622521E52A007493E3 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		3AB4A6B625220A4E0043AD2D /* ItemCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCellViewModel.swift; sourceTree = "<group>"; };
 		3AB4A6B825220E280043AD2D /* ItemListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewModel.swift; sourceTree = "<group>"; };
+		3ABAEF8F25246C0500FC124C /* SignInWithAppleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleButton.swift; sourceTree = "<group>"; };
+		3ABAEF9125246E0C00FC124C /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		812B0DE08D4F84D7D646C02E /* Pods-ShakeList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShakeList.release.xcconfig"; path = "Target Support Files/Pods-ShakeList/Pods-ShakeList.release.xcconfig"; sourceTree = "<group>"; };
 		8269103D3ECD21733271B372 /* Pods-ShakeList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShakeList.debug.xcconfig"; path = "Target Support Files/Pods-ShakeList/Pods-ShakeList.debug.xcconfig"; sourceTree = "<group>"; };
 		F77EE191DF26B35865954565 /* Pods_ShakeList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShakeList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				3A7B57512521E503007493E3 /* ItemListView.swift */,
+				3ABAEF8F25246C0500FC124C /* SignInWithAppleButton.swift */,
+				3ABAEF9125246E0C00FC124C /* SignInView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -270,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ABAEF9025246C0500FC124C /* SignInWithAppleButton.swift in Sources */,
 				3A7B57632521E52A007493E3 /* Item.swift in Sources */,
 				3AB4A6B925220E280043AD2D /* ItemListViewModel.swift in Sources */,
 				3A7B574E2521E503007493E3 /* AppDelegate.swift in Sources */,
@@ -277,6 +284,7 @@
 				3A7B57522521E503007493E3 /* ItemListView.swift in Sources */,
 				3AB4A6B725220A4E0043AD2D /* ItemCellViewModel.swift in Sources */,
 				3A6EF52F25235F5E002B4212 /* ItemRepository.swift in Sources */,
+				3ABAEF9225246E0C00FC124C /* SignInView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
