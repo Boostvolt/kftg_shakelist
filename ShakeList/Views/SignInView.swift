@@ -15,6 +15,10 @@ struct SignInView: View {
     
     var body: some View {
         VStack(spacing: 30){
+        Image(systemName: "person.circle")
+            .resizable()
+            .foregroundColor(Color(.systemBlue))
+            .frame(width: 100, height: 100)
         Text("Melde dich an, um deine Artikel geräteübergreifend zu synchronisieren.")
         .multilineTextAlignment(.center)
         SignInWithAppleButton()

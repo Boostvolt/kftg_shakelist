@@ -16,11 +16,11 @@ struct ItemListView: View {
         navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.systemBlue]
     }
     
-    let items = testDataItems
-    
     @State var presentAddNewItem = false
+    @State var showInfoScreen = false
     @State var showSignInForm = false
-    
+   
+
     var body: some View {
       NavigationView {
         VStack(alignment: .leading) {
@@ -50,15 +50,27 @@ struct ItemListView: View {
                 }
             .padding()
             }
-        .sheet(isPresented: $showSignInForm){
-            SignInView()
-        }
-      .navigationBarItems(trailing:
-        Button(action: { self.showSignInForm.toggle() }) {
-        Image(systemName: "person.circle.fill")
-            .resizable()
-            .frame(width: 20, height: 20)
+        
+        .navigationBarItems(trailing:
+        
+        HStack {
+            Button(action: { self.showSignInForm.toggle() }) {
+            Image(systemName: "person.circle")
+                .resizable()
+                .frame(width: 20, height: 20)
             }
+            .sheet(isPresented: $showSignInForm){
+                SignInView()
+            }
+            Button(action: { self.showInfoScreen.toggle() }) {
+            Image(systemName: "info.circle")
+                .resizable()
+                .frame(width: 20, height: 20)
+            }
+            .sheet(isPresented: $showInfoScreen){
+                InfoView()
+            }
+        }
         )
         .navigationBarTitle("ShakeList")
         }

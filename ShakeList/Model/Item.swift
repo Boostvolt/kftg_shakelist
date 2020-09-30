@@ -17,12 +17,3 @@ struct Item: Codable, Identifiable{
     @ServerTimestamp var createdTime: Timestamp?
     var userId: String?
 }
-
-#if DEBUG
-let testDataItems = [
-    Item(title: "Apfel", completed: true),
-    Item(title: "Karotte", completed: false),
-    Item(title: "Salat", completed: false),
-    Item(title: "Brine", completed: false)
-]
-#endif
