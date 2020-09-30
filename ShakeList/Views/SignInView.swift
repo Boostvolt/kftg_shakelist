@@ -11,6 +11,8 @@ import SwiftUI
 struct SignInView: View {
     @Environment(\.presentationMode) var presentationMode
     
+    @State var coordinator: SignInWithAppleCoordinater?
+    
     var body: some View {
         VStack(spacing: 30){
         Text("Melde dich an, um deine Artikel geräteübergreifend zu synchronisieren.")
@@ -18,7 +20,13 @@ struct SignInView: View {
         SignInWithAppleButton()
         .frame(width: 280, height: 45)
             .onTapGesture {
-                self.presentationMode.wrappedValue.dismiss()
+                self.coordinator = SignInWithAppleCoordinater()
+                if let coordinator = self.coordinator {
+                coordinator.startSignInWithAppleFlow {
+                    print("Erfolgreich angemeldet.")
+                    self.presentationMode.wrappedValue.dismiss()
+                    }
+                }
             }
         }
     }
