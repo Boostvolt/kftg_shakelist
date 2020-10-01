@@ -17,7 +17,7 @@ struct InfoView: View {
             .resizable()
             .foregroundColor(Color(.systemBlue))
             .frame(width: 100, height: 100)
-        Text("Diese App wurde von Jan Kott entwickelt.")
+        Text("Diese App wurde von Jan Kott, Ivo Eid und Laurel Meyer entwickelt.")
         .multilineTextAlignment(.center)
         }
     }
