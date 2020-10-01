@@ -33,14 +33,10 @@ class ItemRepository: ObservableObject {
                         do {
                             let x = try? document.data(as: Item.self)
                             return x
-                        }
-                        catch {
-                            print(error)
-                        }
-                        return nil
                     }
                 }
             }
+        }
     }
     
     func addItem(_ item: Item){
@@ -63,6 +59,7 @@ class ItemRepository: ObservableObject {
             }
         }
     }
+    
     func updateItem(item: Item){
         if let itemID = item.id {
             do {
@@ -78,10 +75,5 @@ class ItemRepository: ObservableObject {
         items.forEach { Item in
             removeItem(Item)
         }
-        
-        
-        
     }
-    
-    
 }

@@ -91,8 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				88169CD923C8A0D6009CFC9C /* App */,
-				8825907F23D9A4FE00AB7022 /* Services */,
-				88D22F8023CDDC4B003C6D03 /* Repositories */,
+				8825907F23D9A4FE00AB7022 /* Service */,
+				88D22F8023CDDC4B003C6D03 /* Repository */,
 				88169CDB23C8A1B7009CFC9C /* Model */,
 				88D22F5B23CCC5BD003C6D03 /* ViewModels */,
 				88169CDA23C8A0EA009CFC9C /* Views */,
@@ -142,12 +142,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		8825907F23D9A4FE00AB7022 /* Services */ = {
+		8825907F23D9A4FE00AB7022 /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				8825908023D9A51900AB7022 /* SignInWithAppleCoordinator.swift */,
 			);
-			path = Services;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		88D22F5B23CCC5BD003C6D03 /* ViewModels */ = {
@@ -159,12 +159,12 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		88D22F8023CDDC4B003C6D03 /* Repositories */ = {
+		88D22F8023CDDC4B003C6D03 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
 				88D22F8123CDDC73003C6D03 /* ItemRepository.swift */,
 			);
-			path = Repositories;
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		E4370257533039127F1E8557 /* Pods */ = {
@@ -206,7 +206,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
-				ORGANIZATIONNAME = "Google LLC";
+				ORGANIZATIONNAME = "Jan Kott";
 				TargetAttributes = {
 					88169CC123C8A081009CFC9C = {
 						CreatedOnToolsVersion = 11.3;

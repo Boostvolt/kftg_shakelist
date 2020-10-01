@@ -29,9 +29,9 @@ struct SignInView: View {
                         coordinator.startSignInWithAppleFlow {
                             print("Erfolgreich angemeldet.")
                             self.presentationMode.wrappedValue.dismiss()
-                        }
                     }
                 }
+            }
         }
     }
 }

@@ -37,7 +37,8 @@ class ItemCellViewModel: ObservableObject, Identifiable {
             .dropFirst()
             .debounce(for: 1.0, scheduler: RunLoop.main)
             .sink{ item in
-                self.itemRepository.updateItem(item: item)           }
+                self.itemRepository.updateItem(item: item)
+            }
             .store(in: &cancellables)
     }
 }

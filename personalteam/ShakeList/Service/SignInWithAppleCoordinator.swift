@@ -55,17 +55,17 @@ extension SignInWithAppleCoordinater: ASAuthorizationControllerDelegate {
   func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
     if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
       guard let nonce = currentNonce else {
-        fatalError("Invalid state: A login callback was received, but no login request was sent.")
+        fatalError("Ungültiger Zustand: Ein Login-Rückruf wurde empfangen, aber es wurde keine Login-Anforderung gesendet.")
       }
       guard let appleIDToken = appleIDCredential.identityToken else {
-        print("Unable to fetch identity token")
+        print("Identitäts-Token kann nicht abgerufen werden.")
         return
       }
       guard let idTokenString = String(data: appleIDToken, encoding: .utf8) else {
-        print("Unable to serialize token string from data: \(appleIDToken.debugDescription)")
+        print("Es ist nicht möglich, Token-Zeichenfolge aus Daten zu serialisieren: \(appleIDToken.debugDescription)")
         return
       }
-      // Initialize a Firebase credential.
+        
       let credential = OAuthProvider.credential(withProviderID: "apple.com",
                                                 idToken: idTokenString,
                                                 rawNonce: nonce)
@@ -90,14 +90,13 @@ extension SignInWithAppleCoordinater: ASAuthorizationControllerDelegate {
                 }
             }
         })
-        }
+     }
   }
 
   func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-    // Handle error.
-    print("Sign in with Apple errored: \(error)")
-  }
 
+    print("Anmeldung mit Apple fehlerhaft: \(error)")
+  }
 }
 
 private func randomNonceString(length: Int = 32) -> String {
@@ -112,7 +111,7 @@ private func randomNonceString(length: Int = 32) -> String {
       var random: UInt8 = 0
       let errorCode = SecRandomCopyBytes(kSecRandomDefault, 1, &random)
       if errorCode != errSecSuccess {
-        fatalError("Unable to generate nonce. SecRandomCopyBytes failed with OSStatus \(errorCode)")
+        fatalError("Kann keine Nonce erzeugen. SecRandomCopyBytes schlug mit OSStatus fehl \(errorCode)")
       }
       return random
     }
@@ -128,6 +127,5 @@ private func randomNonceString(length: Int = 32) -> String {
       }
     }
   }
-
   return result
 }

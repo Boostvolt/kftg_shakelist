@@ -35,7 +35,5 @@ class ItemListViewModel: ObservableObject {
     
     func addItem(item: Item) {
         itemRepository.addItem(item)
-        //        let taskVM = TaskCellViewModel(task: task)
-        //        self.taskCellViewModels.append(taskVM)
     }
 }

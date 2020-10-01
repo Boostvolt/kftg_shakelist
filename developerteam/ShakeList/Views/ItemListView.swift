@@ -59,25 +59,24 @@ struct ItemListView: View {
             }
             
             .navigationBarItems(trailing:
-                                    
-                                    HStack {
-                                        Button(action: { self.showSignInForm.toggle() }) {
-                                            Image(systemName: "person.circle")
-                                                .resizable()
-                                                .frame(width: 30, height: 30)
-                                        }
-                                        .sheet(isPresented: $showSignInForm){
-                                            SignInView()
-                                        }
-                                        Button(action: { self.showInfoScreen.toggle() }) {
-                                            Image(systemName: "info.circle")
-                                                .resizable()
-                                                .frame(width: 30, height: 30)
-                                        }
-                                        .sheet(isPresented: $showInfoScreen){
-                                            InfoView()
-                                        }
-                                    }
+                HStack {
+                    Button(action: { self.showSignInForm.toggle() }) {
+                        Image(systemName: "person.circle")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                    }
+                    .sheet(isPresented: $showSignInForm){
+                        SignInView()
+                    }
+                    Button(action: { self.showInfoScreen.toggle() }) {
+                        Image(systemName: "info.circle")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                    }
+                    .sheet(isPresented: $showInfoScreen){
+                        InfoView()
+                    }
+                }
             )
             .navigationBarTitle("ShakeList")
         }
