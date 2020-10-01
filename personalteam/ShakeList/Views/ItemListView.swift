@@ -57,7 +57,7 @@ struct ItemListView: View {
             Button(action: { self.showSignInForm.toggle() }) {
             Image(systemName: "person.circle")
                 .resizable()
-                .frame(width: 20, height: 20)
+                .frame(width: 30, height: 30)
             }
             .sheet(isPresented: $showSignInForm){
                 SignInView()
@@ -65,7 +65,7 @@ struct ItemListView: View {
             Button(action: { self.showInfoScreen.toggle() }) {
             Image(systemName: "info.circle")
                 .resizable()
-                .frame(width: 20, height: 20)
+                .frame(width: 30, height: 30)
             }
             .sheet(isPresented: $showInfoScreen){
                 InfoView()
