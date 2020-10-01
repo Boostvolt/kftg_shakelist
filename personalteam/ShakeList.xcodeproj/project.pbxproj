@@ -60,12 +60,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3A6EF52D25235EEF002B4212 /* Repositories */ = {
+		3A6EF52D25235EEF002B4212 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
 				3A6EF52E25235F5E002B4212 /* ItemRepository.swift */,
 			);
-			path = Repositories;
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		3A7B57412521E503007493E3 = {
@@ -90,9 +90,9 @@
 			isa = PBXGroup;
 			children = (
 				3A7B57642521E65A007493E3 /* App */,
-				3A6EF52D25235EEF002B4212 /* Repositories */,
+				3A6EF52D25235EEF002B4212 /* Repository */,
 				3A7B57612521E50F007493E3 /* Model */,
-				3AA981EC2524858800BE695C /* Services */,
+				3AA981EC2524858800BE695C /* Service */,
 				3AB4A6B5252209FB0043AD2D /* ViewModels */,
 				3A7B57652521E682007493E3 /* Views */,
 				3A7B57532521E504007493E3 /* Assets.xcassets */,
@@ -140,12 +140,12 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		3AA981EC2524858800BE695C /* Services */ = {
+		3AA981EC2524858800BE695C /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				3AA981ED252485BB00BE695C /* SignInWithAppleCoordinator.swift */,
 			);
-			path = Services;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		3AB4A6B5252209FB0043AD2D /* ViewModels */ = {
@@ -211,7 +211,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3A7B57452521E503007493E3 /* Build configuration list for PBXProject "ShakeLIst" */;
+			buildConfigurationList = 3A7B57452521E503007493E3 /* Build configuration list for PBXProject "ShakeList" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -477,7 +477,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3A7B57452521E503007493E3 /* Build configuration list for PBXProject "ShakeLIst" */ = {
+		3A7B57452521E503007493E3 /* Build configuration list for PBXProject "ShakeList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A7B575C2521E504007493E3 /* Debug */,

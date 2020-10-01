@@ -93,7 +93,7 @@
 				88169CD923C8A0D6009CFC9C /* App */,
 				8825907F23D9A4FE00AB7022 /* Services */,
 				88D22F8023CDDC4B003C6D03 /* Repositories */,
-				88169CDB23C8A1B7009CFC9C /* Models */,
+				88169CDB23C8A1B7009CFC9C /* Model */,
 				88D22F5B23CCC5BD003C6D03 /* ViewModels */,
 				88169CDA23C8A0EA009CFC9C /* Views */,
 				88169CCB23C8A083009CFC9C /* Assets.xcassets */,
@@ -134,12 +134,12 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		88169CDB23C8A1B7009CFC9C /* Models */ = {
+		88169CDB23C8A1B7009CFC9C /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				88169CDC23C8A455009CFC9C /* Item.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		8825907F23D9A4FE00AB7022 /* Services */ = {

@@ -20,22 +20,22 @@ class ItemListViewModel: ObservableObject {
             .map{ items in
                 items.map{item in
                     ItemCellViewModel(item: item)
+                }
             }
-        }
-        .assign(to: \.itemCellViewModels, on: self)
-        .store(in: &cancellables)
+            .assign(to: \.itemCellViewModels, on: self)
+            .store(in: &cancellables)
     }
     
     func removeItems(atOffsets indexSet: IndexSet) {
-      let viewModels = indexSet.lazy.map { self.itemCellViewModels[$0] }
-      viewModels.forEach { itemCellViewModel in
-        itemRepository.removeItem(itemCellViewModel.item)
-      }
+        let viewModels = indexSet.lazy.map { self.itemCellViewModels[$0] }
+        viewModels.forEach { itemCellViewModel in
+            itemRepository.removeItem(itemCellViewModel.item)
+        }
     }
     
     func addItem(item: Item) {
         itemRepository.addItem(item)
-//        let taskVM = TaskCellViewModel(task: task)
-//        self.taskCellViewModels.append(taskVM)
+        //        let taskVM = TaskCellViewModel(task: task)
+        //        self.taskCellViewModels.append(taskVM)
     }
 }

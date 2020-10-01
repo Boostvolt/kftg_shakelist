@@ -26,21 +26,21 @@ class ItemRepository: ObservableObject {
         
         db.collection("items")
             .order(by: "createdTime")
-        .whereField("userId", isEqualTo: userId)
+            .whereField("userId", isEqualTo: userId)
             .addSnapshotListener { (querySnapshot, error) in
-            if let querySnapshot = querySnapshot {
-                self.items = querySnapshot.documents.compactMap{ document in
-                    do {
-                        let x = try? document.data(as: Item.self)
-                        return x
+                if let querySnapshot = querySnapshot {
+                    self.items = querySnapshot.documents.compactMap{ document in
+                        do {
+                            let x = try? document.data(as: Item.self)
+                            return x
+                        }
+                        catch {
+                            print(error)
+                        }
+                        return nil
                     }
-                    catch {
-                        print(error)
-                    }
-                    return nil
                 }
             }
-        }
     }
     
     func addItem(_ item: Item){
@@ -63,8 +63,7 @@ class ItemRepository: ObservableObject {
             }
         }
     }
-    
-    func updateItem(_ item: Item){
+    func updateItem(item: Item){
         if let itemID = item.id {
             do {
                 try db.collection("items").document(itemID).setData(from: item)
@@ -74,4 +73,15 @@ class ItemRepository: ObservableObject {
             }
         }
     }
+    
+    func removeAllItems(){
+        items.forEach { Item in
+            removeItem(Item)
+        }
+        
+        
+        
+    }
+    
+    
 }

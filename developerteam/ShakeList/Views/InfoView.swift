@@ -13,12 +13,12 @@ struct InfoView: View {
     
     var body: some View {
         VStack(spacing: 30){
-        Image(systemName: "info.circle")
-            .resizable()
-            .foregroundColor(Color(.systemBlue))
-            .frame(width: 100, height: 100)
-        Text("Diese App wurde von Jan Kott, Ivo Eid und Laurel Mayer entwickelt.")
-        .multilineTextAlignment(.center)
+            Image(systemName: "info.circle")
+                .resizable()
+                .foregroundColor(Color(.systemBlue))
+                .frame(width: 100, height: 100)
+            Text("Diese App wurde von Jan Kott, Ivo Eid und Laurel Mayer entwickelt.")
+                .multilineTextAlignment(.center)
         }
     }
 }

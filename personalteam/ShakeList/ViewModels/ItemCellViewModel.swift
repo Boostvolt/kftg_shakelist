@@ -10,7 +10,7 @@ import Foundation
 import Combine
 
 class ItemCellViewModel: ObservableObject, Identifiable {
-    @Published var itemRepository = ItemRepository()
+    @Published var itemRepository: ItemRepository
     
     @Published var item: Item
     
@@ -21,23 +21,23 @@ class ItemCellViewModel: ObservableObject, Identifiable {
     
     init(item: Item) {
         self.item = item
+        self.itemRepository = ItemRepository();
         
         $item
-        .map { $0.completed ? "checkmark.circle.fill" : "circle" }
-        .assign(to: \.completionStateIconName, on: self)
-        .store(in: &cancellables)
+            .map { $0.completed ? "checkmark.circle.fill" : "circle" }
+            .assign(to: \.completionStateIconName, on: self)
+            .store(in: &cancellables)
         
         $item
-        .compactMap { $0.id }
-        .assign(to: \.id, on: self)
-        .store(in: &cancellables)
+            .compactMap { $0.id }
+            .assign(to: \.id, on: self)
+            .store(in: &cancellables)
         
         $item
             .dropFirst()
             .debounce(for: 1.0, scheduler: RunLoop.main)
             .sink{ item in
-                self.itemRepository.updateItem(item)
-            }
-        .store(in: &cancellables)
+                self.itemRepository.updateItem(item: item)           }
+            .store(in: &cancellables)
     }
 }
