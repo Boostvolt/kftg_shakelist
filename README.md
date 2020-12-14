@@ -23,4 +23,4 @@ pod install
 
 ## License
 
-Copyright © 2020 Boostvolt. All rights reserved.
+Copyright © 2020 Jan (Boostvolt). All rights reserved.
